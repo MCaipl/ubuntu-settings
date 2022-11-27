@@ -1,0 +1,56 @@
+format = """
+$username@$hostname$directory$git_branch$git_status$git_commit
+$time$cmd_duration$custom$character
+"""
+
+[line_break]
+disabled = true
+
+[username]
+disabled = false
+show_always = true
+format = "🐧 [$user]($style)"
+style_user = "bold green"
+
+[hostname]
+ssh_only = false
+format =  "[$hostname]($style) "
+style = "red"
+disabled = false
+
+[directory]
+format = "🗂️[$path]($style) "
+style = "bold blue"
+truncate_to_repo = true
+
+[time]
+disabled = false
+format = "🕙 [$time]($style) "
+style = "bold yellow"
+
+[cmd_duration]
+min_time = 500
+format = "took [$duration](bold yellow) "
+
+[git_branch]
+truncation_length = 20
+truncation_symbol = ""
+format = "[$symbol$branch]($style) "
+style = "bold green "
+
+[git_commit]
+only_detached = false
+tag_symbol = "🔖 "
+
+[git_status]
+conflicted = "⚔️"
+ahead = "🚀"
+behind = "😰"
+diverged = "😵"
+up_to_date = "✔️"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑️"
